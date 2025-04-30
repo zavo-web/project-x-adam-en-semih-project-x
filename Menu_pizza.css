@@ -23,24 +23,27 @@ body {
 .menu-button {
     background: none;
     border: none;
-    font-size: 14px;
+    font-size: 16px; /* bigger text */
     color: #f44336;
-    padding: 10px 15px;
+    padding: 15px 20px;
     cursor: pointer;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 12px; /* more space between icon and text */
+    transition: all 0.3s ease;
+    border-radius: 20px;
 }
 
 .menu-icon {
-    width: 20px;
-    height: 20px;
+    width: 40px;  /* bigger icon */
+    height: 40px;
+    transition: filter 0.3s ease;
 }
 
 .menu-button.active {
     background: #f44336;
-    color: #fff;
-    border-radius: 30px;
+    color: white;
 }
 
 .menu-grid {
@@ -94,7 +97,7 @@ footer {
     text-align: center;
     margin-top: 40px;
     position: relative;
-    height: 300px;
+    height: 350px;
 }
 
 footer .footer-item {
@@ -135,3 +138,22 @@ footer .footer-item img {
     font-weight: bold;
     margin: 40px 0 20px;
 }
+.boven-links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+  }
+  
+  .boven-rechts {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+  }
+  .midden-onder {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }

@@ -62,6 +62,7 @@ body {
     margin-bottom: 30px;
 }
 
+
 /* Search bar */
 .search-container {
     display: flex;
@@ -170,3 +171,7 @@ footer .footer-item img {
     left: 50%;
     transform: translateX(-50%);
   }
+
+  .logo {
+    cursor: pointer;
+}

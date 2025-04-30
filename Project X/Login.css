@@ -11,7 +11,10 @@ body {
     color: black;
 }
 
-
+.content h1 {
+    text-align: center;
+    margin: 0 auto;
+  }
 
 /* Navbar */
 .navbar {

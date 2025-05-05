@@ -60,6 +60,11 @@ body {
     font-size: 38px;
     max-width: 600px;
     margin-bottom: 30px;
+    background-color: rgba(0, 0, 0, 0.849);
+    color: white;
+    display: inline-block;
+    padding: 8px 16px;
+  border-radius: 8px;
 }
 
 
@@ -87,7 +92,7 @@ body {
 .search-container button {
     background-color: black;
     color: white;
-    padding: 15px 25px;
+    padding: 16px 30px;
     border: none;
     font-size: 16px;
     cursor: pointer;
@@ -96,6 +101,8 @@ body {
 /* Login link */
 .login-links {
     font-size: 14px;
+    margin-right: 1050px;
+  text-align: center;
 }
 
 .login-links a {
@@ -103,9 +110,15 @@ body {
     color: black;
 }
 
+.login-links a {
+    text-decoration: underline;
+    color: black;
+    font-weight: bold;
+  }  
+
 
 footer {
-    background-color: #333;
+    background-color: #1b1b1b;
     color: #fff;
     padding: 30px 20px;
     text-align: center;
@@ -175,3 +188,6 @@ footer .footer-item img {
   .logo {
     cursor: pointer;
 }
+
+
+  

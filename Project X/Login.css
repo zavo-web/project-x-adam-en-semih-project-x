@@ -227,3 +227,11 @@ footer .footer-item img {
     left: 50%;
     transform: translateX(-50%);
   }
+  /* Mobiel (gsm) */
+@media only screen and (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* onder elkaar op mobiel */
+    gap: 10px; /* ruimte tussen de rijen */
+    text-align: center;
+  }
+}

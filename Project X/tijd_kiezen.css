@@ -1,46 +1,90 @@
 body {
   margin: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background: linear-gradient(to bottom, #f8f8f8, #e0e0e0);
+  background: url('/Project X/img/backgroundfoodimg.png') no-repeat center center scroll;
+  background-size: cover;
   color: #333;
 }
 
+/* Navbar */
 .navbar {
-  background: white;
-  padding: 20px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px 50px;
+  background-color: white;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000;
 }
 
-.logo {
+.navbar-left .logo {
   font-weight: bold;
   font-size: 22px;
   cursor: pointer;
 }
 
-.nav-buttons button {
-  margin-left: 10px;
-  padding: 8px 16px;
-  font-size: 14px;
-  border: none;
-  border-radius: 20px;
+.navbar-center {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-center a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar-center a:hover {
+  color: #444;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
-.login-btn {
-  background: white;
-  color: black;
-  border: 1px solid black;
+.icon:hover {
+  transform: scale(1.1);
 }
 
-.register-btn {
-  background: black;
-  color: white;
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
+.search-container .search-input {
+  position: absolute;
+  right: 30px;
+  opacity: 0;
+  width: 0;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.search-container.show .search-input {
+  opacity: 1;
+  width: 160px;
+  pointer-events: all;
+}
+
+/* Content */
 .content {
   text-align: center;
   padding: 100px 20px 50px;
@@ -61,6 +105,12 @@ body {
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   animation: fadeInUp 1s ease-out;
+}
+
+.time-form h1 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #222;
 }
 
 .time-form label {
@@ -99,6 +149,7 @@ body {
   background-color: #444;
 }
 
+/* Animations */
 @keyframes fadeInDown {
   from { transform: translateY(-20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
@@ -109,7 +160,7 @@ body {
   to { transform: translateY(0); opacity: 1; }
 }
 
-/* Footer styling */
+/* Footer */
 footer {
   background-color: #1b1b1b;
   color: #fff;

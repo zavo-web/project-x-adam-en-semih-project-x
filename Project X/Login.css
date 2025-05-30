@@ -228,10 +228,47 @@ footer .footer-item img {
     transform: translateX(-50%);
   }
   /* Mobiel (gsm) */
-@media only screen and (max-width: 768px) {
-  .footer {
-    flex-direction: column; /* onder elkaar op mobiel */
-    gap: 10px; /* ruimte tussen de rijen */
+@media (min-width: 601px) and (max-width: 1024px) {
+  /* Menu Header compacter */
+  .menu-header {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px; /* kleiner dan desktop */
+    padding: 10px 15px; /* minder padding */
+  }
+
+  .logo-container {
+    font-size: 20px;
+  }
+
+  .menu-nav {
+    gap: 20px; /* kleiner dan desktop */
+    justify-content: flex-start;
+  }
+
+  .menu-button {
+    font-size: 14px;
+    padding: 8px 12px;
+    gap: 6px;
+  }
+
+  .menu-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Footer compacter */
+  footer {
+    padding: 20px 15px;
     text-align: center;
+  }
+
+  .boven-links,
+  .boven-rechts,
+  .midden-onder {
+    position: static;
+    transform: none;
+    text-align: center;
+    margin-top: 10px;
   }
 }

@@ -280,20 +280,21 @@ body {
 
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
     padding: 20px;
 }
 
+
 .menu-card {
     background: #f44336;
-    border-radius: 15px;
-    padding: 15px;
+    border-radius: 16px;
+    padding: 20px;
     color: white;
     text-align: center;
     position: relative;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .menu-card:hover {
@@ -337,6 +338,173 @@ body {
 .add-btn:active {
     animation: pop 0.3s ease;
 }
+
+.cart-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+}
+
+.cart-popup {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    background-color: white;
+    border: 2px solid #f44336;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    padding: 20px;
+    z-index: 100;
+    animation: fadeIn 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cart-popup.hidden {
+    display: none;
+}
+
+.cart-popup h3 {
+    margin-top: 0;
+    color: #f44336;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.cart-item .info {
+    flex-grow: 1;
+}
+
+.cart-item .info p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: #f44336;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 8px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Popup animatie */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Bij het toevoegen van item */
+@keyframes itemAdded {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Bij het verwijderen */
+@keyframes itemRemoved {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Toegepast op de popup */
+#cart-popup.show {
+  animation: slideIn 0.4s ease forwards;
+}
+
+#cart-popup.hide {
+  animation: slideOut 0.4s ease forwards;
+}
+
+/* Nieuw toegevoegde items */
+.cart-item.added {
+  animation: itemAdded 0.3s ease;
+}
+
+/* Te verwijderen items */
+.cart-item.removing {
+  animation: itemRemoved 0.4s ease forwards;
+}
+
+.floating-checkout-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #28a745;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 1000;
+}
+
+.floating-checkout-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+
 
 footer {
     background-color: #1b1b1b;

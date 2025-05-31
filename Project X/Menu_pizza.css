@@ -1,3 +1,5 @@
+/* --- jouw bestaande CSS --- */
+
 body {
     margin: 0;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -6,68 +8,98 @@ body {
 
 .menu-header {
     background: #fff;
-    padding: 10px;
+    padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 10;
+
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo-container {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f44336;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    user-select: none;
 }
 
 .menu-nav {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 65px;
+    flex-grow: 1;
 }
 
 .menu-button {
     background: none;
     border: none;
-    font-size: 16px; /* bigger text */
+    font-size: 16px;
     color: #f44336;
     padding: 15px 20px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px; /* more space between icon and text */
+    gap: 12px;
     transition: all 0.3s ease;
     border-radius: 20px;
 }
 
-.menu-icon {
-    width: 40px;  /* bigger icon */
-    height: 40px;
-    transition: filter 0.3s ease;
+.menu-button:hover {
+    background: #ffe5e0;
+    transform: scale(1.05);
 }
 
 .menu-button.active {
     background: #f44336;
     color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    padding: 15px 20px;         /* voeg toe */
+    border-radius: 20px;        /* voeg toe */
+}
+
+
+.menu-icon {
+    width: 40px;
+    height: 40px;
+    transition: filter 0.3s ease;
 }
 
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
     padding: 20px;
 }
 
+
 .menu-card {
     background: #f44336;
-    border-radius: 15px;
-    padding: 15px;
+    border-radius: 16px;
+    padding: 20px;
     color: white;
     text-align: center;
     position: relative;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
 }
 
 .menu-img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
+  width: 100%; 
+  height: 150px;         
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
 }
 
 .price {
@@ -87,9 +119,186 @@ body {
     border-radius: 50%;
     font-size: 20px;
     cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
-/* Footer */
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.add-btn:active {
+    animation: pop 0.3s ease;
+}
+
+.cart-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+}
+
+.cart-popup {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    background-color: white;
+    border: 2px solid #f44336;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    padding: 20px;
+    z-index: 100;
+    animation: fadeIn 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cart-popup.hidden {
+    display: none;
+}
+
+.cart-popup h3 {
+    margin-top: 0;
+    color: #f44336;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.cart-item .info {
+    flex-grow: 1;
+}
+
+.cart-item .info p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: #f44336;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 8px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Popup animatie */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Bij het toevoegen van item */
+@keyframes itemAdded {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Bij het verwijderen */
+@keyframes itemRemoved {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Toegepast op de popup */
+#cart-popup.show {
+  animation: slideIn 0.4s ease forwards;
+}
+
+#cart-popup.hide {
+  animation: slideOut 0.4s ease forwards;
+}
+
+/* Nieuw toegevoegde items */
+.cart-item.added {
+  animation: itemAdded 0.3s ease;
+}
+
+/* Te verwijderen items */
+.cart-item.removing {
+  animation: itemRemoved 0.4s ease forwards;
+}
+
+.floating-checkout-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #28a745;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 1000;
+}
+
+.floating-checkout-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+
+
 footer {
     background-color: #1b1b1b;
     color: #fff;
@@ -138,27 +347,93 @@ footer .footer-item img {
     font-weight: bold;
     margin: 40px 0 20px;
 }
+
 .boven-links {
     position: absolute;
     top: 0;
     left: 0;
     padding: 10px;
-  }
-  
-  .boven-rechts {
+}
+
+.boven-rechts {
     position: absolute;
     top: 0;
     right: 0;
     padding: 10px;
-  }
-  .midden-onder {
+}
+
+.midden-onder {
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+}
+
+@media (max-width: 600px) {
+  /* Compact the header */
+  .menu-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
   }
 
-  @media (min-width: 601px) and (max-width: 1024px) {
+  .logo-container {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .menu-nav {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+
+  .menu-button {
+    font-size: 12px;
+    padding: 6px 8px;
+    gap: 5px;
+  }
+
+  .menu-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  /* Footer layout */
+  footer {
+    height: auto;
+    text-align: left;
+    padding: 20px 10px;
+  }
+
+  footer .footer-item {
+    margin-bottom: 20px;
+  }
+
+  footer .footer-item img {
+    max-width: 120px;
+  }
+
+  footer .footer-item:nth-child(2) img {
+    margin: 10px 0;
+  }
+
+  .boven-links,
+  .boven-rechts,
+  .midden-onder {
+    position: static;
+    transform: none;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .copyright {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+@media (min-width: 601px) and (max-width: 1024px) {
   /* Menu Header compacter */
   .menu-header {
     flex-direction: row;

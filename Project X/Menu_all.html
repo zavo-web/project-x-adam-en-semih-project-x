@@ -1,178 +1,847 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Menu ⏐ ZavoMeals</title>
-    <link href="Menu_all.css" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon"  href="/Project X/img/ZavoMeals (grotere logo) (2).png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Menu ⏐ ZavoMeals</title>
+  <link rel="stylesheet" href="Menu_all.css">
+  <link rel="icon" type="image/png" href="/Project X/img/ZavoMeals (grotere logo) (2).png">
 </head>
 <body>
 
-<!-- Menu Header -->
 <header class="menu-header">
-  
-  <div class="logo" onclick="window.location.href='index.html';"
-   style="font-weight: bold; font-size: 22px;">
-  ZavoMeals
-</div>
-
+  <a href="index.html" class="logo-container">ZavoMeals</a>
   <nav class="menu-nav">
-    <button class="menu-button active">
-      <img src="/Project X/img/All_menuLogo.png" alt="All Menu" class="menu-icon"> All Menu
-    </button>
-    <button class="menu-button">
-      <img src="/Project X/img/logo_pizza.png" alt="Pizza" class="menu-icon"> Pizza
-    </button>
-    <button class="menu-button">
-      <img src="/Project X/img/Logo_burger.png" alt="Burger" class="menu-icon"> Burger
-    </button>
-    <button class="menu-button">
-      <img src="/Project X/img/Logo_combo.png" alt="Combo" class="menu-icon"> Combo
-    </button>
-    <button class="menu-button">
-      <img src="/Project X/img/Logo_drinks.png" alt="Drinks" class="menu-icon"> Drinks
-    </button>
-    <button class="menu-button">
-      <img src="/Project X/img/logo_sandwich.png" alt="Sandwich" class="menu-icon"> Sandwich
-    </button>
-    <button class="menu-button">
-      <img src="/Project X/img/salad_logo.png" alt="Salad" class="menu-icon"> Salad
-    </button>
+    <a href="Menu_all.html" class="menu-button active"><img src="/Project X/img/nieuwe menu foto.png" alt="Alle menu categorieën" class="menu-icon"> All Menu</a>
+    <a href="Menu_pizza.html" class="menu-button"><img src="/Project X/img/logo_pizza.png" alt="Pizza categorie" class="menu-icon"> Pizza</a>
+    <a href="Menu_burger.html" class="menu-button"><img src="/Project X/img/Logo_burger.png" alt="Burger categorie" class="menu-icon"> Burger</a>
+    <a href="Menu_combo.html" class="menu-button"><img src="/Project X/img/Logo_combo.png" alt="Combo deals" class="menu-icon"> Combo</a>
+    <a href="Menu_drinks.html" class="menu-button"><img src="/Project X/img/Logo_drinks.png" alt="Drankjes" class="menu-icon"> Drinks</a>
+    <a href="Menu_sandwich.html" class="menu-button"><img src="/Project X/img/logo_sandwich.png" alt="Sandwich categorie" class="menu-icon"> Sandwich</a>
+    <a href="Menu_salad.html" class="menu-button"><img src="/Project X/img/nieuwe salad photo.png" alt="Salades" class="menu-icon"> Salad</a>
   </nav>
+
+  <div class="cart-icon-container boven-rechts">
+    <img src="/Project X/img/winkelmand.png" class="cart-icon" onclick="toggleCart()" />
+  </div>
+
+  <div id="cart-popup" class="cart-popup hidden">
+    <h3>Winkelmand</h3>
+    <div id="cart-items"></div>
+  </div>
 </header>
 
-
-<!-- Menu Grid -->
+<h2 class="menu-section-title">Burgers</h2>
 <main class="menu-grid">
   <div class="menu-card">
-    <img src="./img/" alt="Product" class="menu-img">
-    <h3>naam_kader</h3>
-    <p>250g</p>
-    <p class="price">€3,00</p>
-    <button class="add-btn">+</button>
+    <img src="/Project X/img/classicburger.jpeg" alt="Classic burger met kaas" class="menu-img">
+    <h3>Classic Burger</h3>
+    <p>Rundvlees, cheddar, sla, tomaat, ketchup</p>
+    <p class="price">€6,50</p>
+    <button class="add-btn" type="button">+</button>
   </div>
 
   <div class="menu-card">
-    <img src="./img/" alt="Pizza" class="menu-img">
-    <h3>naam_kader</h3>
-    <p>100g</p>
-    <p class="price">€2,50</p>
-    <button class="add-btn">+</button>
+    <img src="/Project X/img/baconcheeseburger.jpeg" alt="Bacon cheeseburger" class="menu-img">
+    <h3>Bacon Cheese</h3>
+    <p>Rundvlees, spek, cheddar, BBQ-saus</p>
+    <p class="price">€7,20</p>
+    <button class="add-btn" type="button">+</button>
   </div>
 
   <div class="menu-card">
-    <img src="img/voorbeeld3.png" alt="Product" class="menu-img">
-    <h3>naam_kader</h3>
-    <p>300g</p>
-    <p class="price">€5,00</p>
-    <button class="add-btn">+</button>
+    <img src="/Project X/img/veggie chipi chapa bla bla.jpeg" alt="Vegetarische burger" class="menu-img">
+    <h3>Veggie Burger</h3>
+    <p>Kikkererwtenburger, hummus, rucola, komkommer</p>
+    <p class="price">€6,80</p>
+    <button class="add-btn" type="button">+</button>
   </div>
 
   <div class="menu-card">
-    <img src="img/voorbeeld4.png" alt="Product" class="menu-img">
-    <h3>naam_kader</h3>
-    <p>200g</p>
-    <p class="price">€4,00</p>
-    <button class="add-btn">+</button>
+    <img src="/Project X/img/spicy jalapeno burgir.jpeg" alt="Spicy jalapeño burger" class="menu-img">
+    <h3>Spicy Jalapeño</h3>
+    <p>Rundvlees, jalapeños, kaas, chipotle mayo</p>
+    <p class="price">€7,00</p>
+    <button class="add-btn" type="button">+</button>
   </div>
 
   <div class="menu-card">
-    <img src="img/voorbeeld5.png" alt="Product" class="menu-img">
-    <h3>naam_kader</h3>
-    <p>180g</p>
-    <p class="price">€3,50</p>
-    <button class="add-btn">+</button>
+    <img src="/Project X/img/black angus burger.jpeg" alt="Truffelburger" class="menu-img">
+    <h3>Truffel Burger</h3>
+    <p>Black Angus, truffelmayonaise, rucola, ui</p>
+    <p class="price">€7,80</p>
+    <button class="add-btn" type="button">+</button>
   </div>
 
   <div class="menu-card">
-    <img src="img/voorbeeld6.png" alt="Product" class="menu-img">
-    <h3>naam_kader</h3>
-    <p>150g</p>
-    <p class="price">€2,80</p>
-    <button class="add-btn">+</button>
+    <img src="/Project X/img/double cheeseburger.jpeg" alt="Dubbele beef burger" class="menu-img">
+    <h3>Double Beef</h3>
+    <p>2x rundvlees, cheddar, augurk, ketchup</p>
+    <p class="price">€8,00</p>
+    <button class="add-btn" type="button">+</button>
   </div>
 
   <div class="menu-card">
-    <img src="img/voorbeeld7.png" alt="Product" class="menu-img">
-    <h3>naam_kader</h3>
-    <p>220g</p>
-    <p class="price">€3,80</p>
-    <button class="add-btn">+</button>
+    <img src="/Project X/img/bbq smokehouse burger.jpeg" alt="BBQ Smokehouse burger" class="menu-img">
+    <h3>BBQ Smokehouse</h3>
+    <p>Rundvlees, bacon, gebakken ui, BBQ-saus</p>
+    <p class="price">€7,50</p>
+    <button class="add-btn" type="button">+</button>
   </div>
 
   <div class="menu-card">
-    <img src="img/voorbeeld8.png" alt="Product" class="menu-img">
-    <h3>naam_kader</h3>
-    <p>250g</p>
-    <p class="price">€2,90</p>
-    <button class="add-btn">+</button>
+    <img src="/Project X/img/mushroom swiss burger.jpeg" alt="Mushroom Swiss burger" class="menu-img">
+    <h3>Mushroom Swiss</h3>
+    <p>Champignons, Zwitserse kaas, aioli</p>
+    <p class="price">€6,90</p>
+    <button class="add-btn" type="button">+</button>
   </div>
 
+  <div class="menu-card">
+    <img src="/Project X/img/fish burger.jpeg" alt="Visburger" class="menu-img">
+    <h3>Fish Burger</h3>
+    <p>Paneerde visfilet, sla, tartaarsaus</p>
+    <p class="price">€6,70</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/grilled hallouni.jpeg" alt="Halloumi burger" class="menu-img">
+    <h3>Halloumi Burger</h3>
+    <p>Gegrilde halloumi, tomaat, pesto</p>
+    <p class="price">€6,90</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/blue cheese burger.jpeg" alt="Blue cheese burger" class="menu-img">
+    <h3>Blue Cheese</h3>
+    <p>Rundvlees, blauwe kaas, gekarameliseerde ui</p>
+    <p class="price">€7,60</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/chili top burger.jpeg" alt="Hot chili burger" class="menu-img">
+    <h3>Hot Chili</h3>
+    <p>Chili con carne topping, kaas, rode ui</p>
+    <p class="price">€7,10</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/crispy vegan burger.jpeg" alt="Crispy vegan burger" class="menu-img">
+    <h3>Crispy Vegan</h3>
+    <p>Sojaburger, vegan mayo, sla, tomaat</p>
+    <p class="price">€6,80</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/italian style burger.jpeg" alt="Italiaanse burger" class="menu-img">
+    <h3>Italian Burger</h3>
+    <p>Mozzarella, pesto, zongedroogde tomaat</p>
+    <p class="price">€7,00</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/guacamole burger.jpeg" alt="Guacamole burger" class="menu-img">
+    <h3>Guacamole Burger</h3>
+    <p>Rundvlees, guac, rode ui, sla</p>
+    <p class="price">€7,30</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/honey mustard burger.jpeg" alt="Honey mustard burger" class="menu-img">
+    <h3>Honey Mustard</h3>
+    <p>Kipburger, honing-mosterdsaus, ijsbergsla</p>
+    <p class="price">€6,60</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/crispy onion burger.jpeg" alt="Burger met krokante ui" class="menu-img">
+    <h3>Crunchy Onion</h3>
+    <p>Rundvlees, krokante uitjes, cheddar</p>
+    <p class="price">€7,10</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/sweet burger avocado.jpeg" alt="Burger met zoete aardappel" class="menu-img">
+    <h3>Sweet Potato Burger</h3>
+    <p>Zoete aardappelpatty, avocado, sla</p>
+    <p class="price">€6,90</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/peanut sauce burger.jpeg" alt="Satay burger" class="menu-img">
+    <h3>Peanut Satay</h3>
+    <p>Kipburger met pindasaus en atjar</p>
+    <p class="price">€7,40</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/breakfast burger.jpeg" alt="Ontbijt burger met ei" class="menu-img">
+    <h3>Breakfast Burger</h3>
+    <p>Rundvlees, spiegelei, bacon, kaas</p>
+    <p class="price">€7,80</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
 </main>
 
-</body>
-</html>
+<h2 class="menu-section-title">Pizza</h2>
 
+<main class="menu-grid">
+  <div class="menu-card">
+    <img src="/Project X/img/margharita pizza.jpeg" alt="Classic Margherita Pizza" class="menu-img">
+    <h3>Classic Margherita</h3>
+    <p>Klassieke pizza met mozzarella, tomaat en verse basilicum</p>
+    <p class="price">€6,50</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/bbq bacon pizza.jpeg" alt="BBQ Bacon Pizza with Cheese" class="menu-img">
+    <h3>BBQ Bacon</h3>
+    <p>Pizza met BBQ-saus, spek en cheddar</p>
+    <p class="price">€7,20</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/vegan chickpea hummus pizza.jpeg" alt="Vegan Chickpea Pizza" class="menu-img">
+    <h3>Vegan Hummus</h3>
+    <p>Kikkererwtenbasis, hummus, rucola en komkommer</p>
+    <p class="price">€6,80</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/chili con carne pizza.jpeg" alt="Spicy Jalapeño Pizza" class="menu-img">
+    <h3>Spicy Jalapeño</h3>
+    <p>Jalapeños, kaas, chipotle mayonaise</p>
+    <p class="price">€7,00</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/truffle mushroom pizza.jpeg" alt="Truffle Mushroom Pizza" class="menu-img">
+    <h3>Truffle Mushroom</h3>
+    <p>Truffelmayonaise, champignons en rucola</p>
+    <p class="price">€7,80</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/double chease meat.jpeg" alt="Double Cheese Meat Lover's Pizza" class="menu-img">
+    <h3>Double Cheese Meat</h3>
+    <p>Dubbele kaas, rundvlees, augurk, ketchup</p>
+    <p class="price">€8,00</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/bbq pork pizza.jpeg" alt="BBQ Pulled Pork Pizza" class="menu-img">
+    <h3>Pulled Pork</h3>
+    <p>BBQ-saus, pulled pork, gebakken ui</p>
+    <p class="price">€7,50</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/mushroom swiss pizza.jpeg" alt="Mushroom and Swiss Pizza" class="menu-img">
+    <h3>Mushroom Swiss</h3>
+    <p>Champignons, Zwitserse kaas, aioli</p>
+    <p class="price">€6,90</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/fish with tartar pizza.jpeg" alt="Fish Pizza with Tartare Sauce" class="menu-img">
+    <h3>Fish Tartare</h3>
+    <p>Visfilet, ijsbergsla, tartaarsaus</p>
+    <p class="price">€6,70</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/grilled halloumi pizza.jpeg" alt="Grilled Halloumi Pizza" class="menu-img">
+    <h3>Halloumi Pesto</h3>
+    <p>Gegrilde halloumi, tomaat, pesto</p>
+    <p class="price">€6,90</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/blue cheese pizza.jpeg" alt="Blue Cheese Pizza" class="menu-img">
+    <h3>Blue Cheese</h3>
+    <p>Blauwe kaas, gekarameliseerde ui, mozzarella</p>
+    <p class="price">€7,60</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/chili con carne pizza.jpeg" alt="Chili Con Carne Pizza" class="menu-img">
+    <h3>Chili Con Carne</h3>
+    <p>Pittige chili topping, kaas, rode ui</p>
+    <p class="price">€7,10</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/crispy vegan pizza.jpeg" alt="Crispy Vegan Pizza" class="menu-img">
+    <h3>Crispy Vegan</h3>
+    <p>Sojabasis, vegan mayo, tomaat, sla</p>
+    <p class="price">€6,80</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/italian pizza dried.jpeg" alt="Italian Style Pizza" class="menu-img">
+    <h3>Italian Style</h3>
+    <p>Pesto, mozzarella en zongedroogde tomaten</p>
+    <p class="price">€7,00</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/guacamole pizza.jpeg" alt="Guacamole Pizza" class="menu-img">
+    <h3>Guacamole</h3>
+    <p>Guac, rode ui, sla, tomaat</p>
+    <p class="price">€7,30</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/honey mustard pizza.jpeg" alt="Honey Mustard Chicken Pizza" class="menu-img">
+    <h3>Honey Mustard</h3>
+    <p>Kip, honing-mosterdsaus, ijsbergsla</p>
+    <p class="price">€6,60</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/crispy onion pizza.jpeg" alt="Crispy Onion Pizza" class="menu-img">
+    <h3>Crispy Onion</h3>
+    <p>Krokante uitjes, cheddar, rundvlees</p>
+    <p class="price">€7,10</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/sweet potato pizza.jpeg" alt="Sweet Potato and Avocado Pizza" class="menu-img">
+    <h3>Sweet Avocado</h3>
+    <p>Zoete aardappel, avocado en rucola</p>
+    <p class="price">€6,90</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/chicken satay.jpeg" alt="Chicken Satay Pizza" class="menu-img">
+    <h3>Chicken Satay</h3>
+    <p>Kip, pindasaus en atjar</p>
+    <p class="price">€7,40</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/breakfast pizza.jpeg" alt="Breakfast Pizza with Egg and Bacon" class="menu-img">
+    <h3>Breakfast Pizza</h3>
+    <p>Spiegelei, bacon, kaas, rundvlees</p>
+    <p class="price">€7,80</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+</main>
+
+<h2 class="menu-section-title">Combo</h2>
+
+<main class="menu-grid">
+  <div class="menu-card">
+    <img src="/Project X/img/cheese burger, friet, cola.jpeg" alt="Burger Combo" class="menu-img">
+    <h3>Cheeseburger Combo</h3>
+    <p>Cheeseburger met friet en frisdrank</p>
+    <p class="price">€8,50</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/pizza met drank.jpeg" alt="Pizza Combo" class="menu-img">
+    <h3>Pizza & Drink</h3>
+    <p>Medium pizza naar keuze + drankje</p>
+    <p class="price">€9,00</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/sandwich met drank.jpeg" alt="Sandwich Combo" class="menu-img">
+    <h3>Sandwich Deal</h3>
+    <p>Verse sandwich met drankje</p>
+    <p class="price">€7,00</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/salada, drank, sandwich.jpeg" alt="Salade Combo" class="menu-img">
+    <h3>Salade Combo</h3>
+    <p>Gezonde salade, broodje & sapje</p>
+    <p class="price">€8,20</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/double cheesburger, fries,cola.jpeg" alt="Double Burger Combo" class="menu-img">
+    <h3>Double Burger Combo</h3>
+    <p>Dubbele burger met friet en cola</p>
+    <p class="price">€9,50</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+</main>
+
+<h2 class="menu-section-title">Sandwich</h2>
+
+<main class="menu-grid">
+  <div class="menu-card">
+    <img src="/Project X/img/afbeelding1.jpeg" alt="Volkorenbrood met kipfilet, sla en tomaat" class="menu-img">
+    <h3>Kip Deluxe</h3>
+    <p>Volkorenbrood, kipfilet, sla, tomaat, yoghurtdressing</p>
+    <p class="price">€5,00</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/afbeelding2.jpg" alt="Wit brood met ham, kaas en augurk" class="menu-img">
+    <h3>Klassieke Ham & Kaas</h3>
+    <p>Wit brood, gekookte ham, jonge kaas, augurk, boter</p>
+    <p class="price">€4,50</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/afbeelding3.webp" alt="Ciabatta met rosbief en rucola" class="menu-img">
+    <h3>Italiaanse Rosbief</h3>
+    <p>Ciabatta, rosbief, rucola, mosterdmayonaise</p>
+    <p class="price">€6,00</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/afbeelding4.jpeg" alt="Bruin brood met geitenkaas en honing" class="menu-img">
+    <h3>Geit & Honing</h3>
+    <p>Bruin brood, geitenkaas, honing, walnoten, rucola</p>
+    <p class="price">€5,80</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/afbeelding5.jpeg" alt="Meergranenbrood met tonijn en maïs" class="menu-img">
+    <h3>Tonijn Speciaal</h3>
+    <p>Meergranenbrood, tonijnsalade, maïs, ui</p>
+    <p class="price">€5,20</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/afbeelding6.jpeg" alt="Baguette met mozzarella en pesto" class="menu-img">
+    <h3>Caprese Baguette</h3>
+    <p>Baguette, mozzarella, tomaat, pesto, basilicum</p>
+    <p class="price">€5,70</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/afbeelding7.jpeg" alt="Wit brood met zalm en roomkaas" class="menu-img">
+    <h3>Scandinavisch</h3>
+    <p>Wit brood, gerookte zalm, roomkaas, dille</p>
+    <p class="price">€6,50</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/afbeelding8.jpeg" alt="Ciabatta met kip en curry" class="menu-img">
+    <h3>Pittige Kip Curry</h3>
+    <p>Ciabatta, kip in curry, wortel, sla</p>
+    <p class="price">€5,90</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/afbeelding9.jpeg" alt="Wit brood met eiersalade" class="menu-img">
+    <h3>Ei Klassiek</h3>
+    <p>Wit brood, huisgemaakte eiersalade, bieslook</p>
+    <p class="price">€4,00</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/afbeelding10.jpeg" alt="Focaccia met parmaham en rucola" class="menu-img">
+    <h3>Parma Focaccia</h3>
+    <p>Focaccia, parmaham, rucola, parmezaanse kaas</p>
+    <p class="price">€6,20</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/afbeelding11.jpeg" alt="Meergranenbrood met hummus en groenten" class="menu-img">
+    <h3>Vegan Genot</h3>
+    <p>Meergranenbrood, hummus, paprika, komkommer, spinazie</p>
+    <p class="price">€5,50</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/afbeelding12.jpeg" alt="Baguette met kip en avocado" class="menu-img">
+    <h3>Kip Avocado</h3>
+    <p>Baguette, gegrilde kip, avocado, sla, limoenmayo</p>
+    <p class="price">€6,30</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/afbeelding13.jpeg" alt="Wit brood met filet americain" class="menu-img">
+    <h3>Filet Americain</h3>
+    <p>Wit brood, filet americain, ui, peper</p>
+    <p class="price">€5,10</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/afbeelding14.jpeg" alt="Sandwich met pulled pork en coleslaw" class="menu-img">
+    <h3>BBQ Pulled Pork</h3>
+    <p>Sandwich, pulled pork, coleslaw, BBQ-saus</p>
+    <p class="price">€6,80</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="/Project X/img/afbeelding15.jpeg" alt="Broodje met gebakken ei, spek en kaas" class="menu-img">
+    <h3>Ontbijtbroodje</h3>
+    <p>Krokant broodje, gebakken ei, spek, kaas</p>
+    <p class="price">€5,40</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+  </main>
+
+<h2 class="menu-section-title">Salad</h2>
+
+<main class="menu-grid">
+  <div class="menu-card">
+  <img src="/Project X/img/cesar_sla.jpeg" alt="Caesar salade" class="menu-img">
+  <h3>Caesar Salade</h3>
+  <p>Romeinse sla, gegrilde kip, croutons, Parmezaan, caesardressing</p>
+  <p class="price">€6,50</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="/Project X/img/quinoa avocado.jpeg" alt="Quinoasalade met avocado" class="menu-img">
+  <h3>Quinoa Avocado</h3>
+  <p>Quinoa, avocado, maïs, paprika, limoen-munt dressing</p>
+  <p class="price">€6,80</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="/Project X/img/zalm sla.jpeg" alt="Zalm salade" class="menu-img">
+  <h3>Zalm Salade</h3>
+  <p>Gemengde sla, gerookte zalm, dille, ei, yoghurtdressing</p>
+  <p class="price">€7,20</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="/Project X/img/falafel power.jpeg" alt="Falafel salade" class="menu-img">
+  <h3>Falafel Power</h3>
+  <p>Rucola, falafel, hummus, kikkererwten, tahini</p>
+  <p class="price">€6,10</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="/Project X/img/tuna nicoase.jpeg" alt="Tonijn salade" class="menu-img">
+  <h3>Tonijn Nicoise</h3>
+  <p>Gemengde sla, tonijn, bonen, ui, mosterddressing</p>
+  <p class="price">€6,70</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="/Project X/img/grilde groenten.jpeg" alt="Gegrilde groente salade" class="menu-img">
+  <h3>Gegrilde Groente</h3>
+  <p>Courgette, paprika, aubergine, balsamico</p>
+  <p class="price">€5,80</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="/Project X/img/chicken mango.jpeg" alt="Kip mango salade" class="menu-img">
+  <h3>Kip Mango</h3>
+  <p>Kip, avocado, tomaat, limoen-dressing</p>
+  <p class="price">€7,00</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="/Project X/img/caprese salad.jpeg" alt="Caprese salade" class="menu-img">
+  <h3>Mozzarella Tomaat</h3>
+  <p>Tomaat, mozzarella, basilicum, olijfolie</p>
+  <p class="price">€5,50</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="/Project X/img/tabbouleh.jpeg" alt="Tabbouleh salade" class="menu-img">
+  <h3>Tabouleh</h3>
+  <p>Bulgur, tomaat, peterselie, citroen</p>
+  <p class="price">€5,90</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="/Project X/img/temph thai.jpeg" alt="Thaise tempeh salade" class="menu-img">
+  <h3>Tempeh Thai</h3>
+  <p>Linzen, wortel, rode biet, appel</p>
+  <p class="price">€5,70</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="/Project X/img/pesto pasta.jpeg" alt="Pasta pesto salade" class="menu-img">
+  <h3>Pasta Pesto</h3>
+  <p>Pasta, pesto, cherrytomaat, rucola</p>
+  <p class="price">€6,20</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="/Project X/img/avocado eiersla.jpeg" alt="Avocado ei salade" class="menu-img">
+  <h3>Avocado Eiersalade</h3>
+  <p>Mozzarella, spinazie, tomaat, pijnboompitten</p>
+  <p class="price">€6,30</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="/Project X/img/beet goat cheese salad.jpeg" alt="Bieten geitenkaas salade" class="menu-img">
+  <h3>Bieten Geitenkaas</h3>
+  <p>Bloemkool, granaatappel, koriander, yoghurt</p>
+  <p class="price">€6,40</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="/Project X/img/griekse sla.jpeg" alt="Griekse salade" class="menu-img">
+  <h3>Griekse Salade</h3>
+  <p>Komkommer, tomaat, rode ui, olijven, feta</p>
+  <p class="price">€5,90</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="/Project X/img/asian shrimp salad.jpeg" alt="Aziatische garnalen salade" class="menu-img">
+  <h3>Garnalen Aziatisch</h3>
+  <p>Rode kool, wortel, sesam, sojadressing</p>
+  <p class="price">€6,30</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="/Project X/img/waldorf salad.jpeg" alt="Waldorf salade" class="menu-img">
+  <h3>Waldorf</h3>
+  <p>Aardbei, blauwe bes, kiwi, munt</p>
+  <p class="price">€5,30</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="/Project X/img/mexian rise bean salad.jpeg" alt="Rijst en bonen salade" class="menu-img">
+  <h3>Rijstbonen Mexicaans</h3>
+  <p>Mais, bonen, tomaat, koriander, limoendressing</p>
+  <p class="price">€6,90</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="/Project X/img/boerenkool boost.jpeg" alt="Boerenkool salade" class="menu-img">
+  <h3>Boerenkool Boost</h3>
+  <p>Boerenkool, appel, walnoten, cranberries, honing-mosterd dressing</p>
+  <p class="price">€6,60</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="/Project X/img/tofu sesame salad.jpeg" alt="Tofu salade" class="menu-img">
+  <h3>Tofu Crunch</h3>
+  <p>Gemengde sla, gemarineerde tofu, wortel, sesam, pindadressing</p>
+  <p class="price">€6,50</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="/Project X/img/chicken wrap salad.jpeg" alt="Kip Caesar wrap salade" class="menu-img">
+  <h3>Kip Caesar Wrap</h3>
+  <p>Kikkererwten, spinazie, komijn, citroen</p>
+  <p class="price">€5,60</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+</main>
+
+
+
+<a href="betalen.html" class="floating-checkout-btn">Verder gaan met betalen</a>
 
 <footer>
-  <div class="footer-item center">
-    <img src="./img/ZavoMeals.png" alt="Logo" width="175" />
-  </div>
-  <div class="boven-links">
-    <h1 id="Over_ons">Over ons</h1>
-    <p></p>
-    <br />
-    <p><strong>Wil je meer Weten over ons? klik hier </strong></p>
-    <br />
-    <nav>
-      <a href="./contact.html"> Wie zijn wij? </a>
-      <br />
-      <a href="./contact.html"> Onze missie </a>
-      <br />
-      <a href="./contact.html"> Waarom kiezen voor ons? </a>
-      <br />
-      <a href="./contact.html"> Onze visie </a>
-      <br />
-      <a href="./contact.html"> Wil je ons contacteren? </a>
-      <br />
-      <a href="./contact.html"> Over Copyright </a>
-      <br />
-    </nav>
-  </div>
-  <br />
-  <div class="boven-rechts">
-    <h1 id="Contact">Vragen?</h1>
-    <p>Mail of bel ons!</p>
-    <br />
-    <p>
-      <strong>Email:</strong><br />
-      <a href="ZavoMeals@gmail.com">ZavoMeals@gmail.com</a>
-    </p>
-    <br />
-    <p>
-      <strong>Telefoon:</strong><br />
-      <a href="+328392927">+328392927</a>
-    </p>
-    <br />
-    <p><strong>adres:</strong> Stationsstraat 50, 1930 Zaventem, België</p>
-    <h3>Volg ons ook op</h3>
-    <a href="https://www.instagram.com/" target="_blank">
-      <img
-        src="./img/Insta2.png"
-        alt="insta"
-        width="45"
-        height="45"
-      />
-    </a>
-    <a href="https://www.facebook.com/" target="_blank">
-      <img src="./img/facebook.png" alt="facebook" width="45" height="45" />
-    </a>
-  </div>
-
-  <div class="copyright midden-onder">
-    <p>&copy; 2025 ZavoMeals. Alle rechten voorbehouden.</p>
-  </div>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-item center">
+      <img src="/Project X/img/ZavoMeals.png" alt="ZavoMeals logo" width="175">
+    </div>
+    <div class="boven-links">
+      <h1 id="Over_ons">Over ons</h1>
+      <p><strong>Meer weten over ons? Klik hieronder:</strong></p>
+      <nav>
+        <a href="./contact.html">Wie zijn wij?</a><br>
+        <a href="./contact.html">Onze missie</a><br>
+        <a href="./contact.html">Waarom kiezen voor ons?</a><br>
+        <a href="./contact.html">Onze visie</a><br>
+        <a href="./contact.html">Contact opnemen</a><br>
+        <a href="./contact.html">Over copyright</a>
+      </nav>
+    </div>
+    <div class="boven-rechts">
+      <h1 id="Contact">Vragen?</h1>
+      <p>Mail of bel ons!</p>
+      <p><strong>Email:</strong><br><a href="mailto:ZavoMeals@gmail.com">ZavoMeals@gmail.com</a></p>
+      <p><strong>Telefoon:</strong><br><a href="tel:+328392927">+32 839 29 27</a></p>
+      <p><strong>Adres:</strong><br>Stationsstraat 50, 1930 Zaventem, België</p>
+      <h3>Volg ons</h3>
+      <a href="https://www.instagram.com/" target="_blank"><img src="/Project X/img/Insta2.png" alt="Instagram logo" width="45"></a>
+      <a href="https://www.facebook.com/" target="_blank"><img src="/Project X/img/facebook.png" alt="Facebook logo" width="45"></a>
+    </div>
+    <div class="copyright midden-onder">
+      <p>&copy; 2025 ZavoMeals. Alle rechten voorbehouden.</p>
+    </div>
+  </footer>
 </footer>
+
+<!-- javascript -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".menu-card");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    cards.forEach(card => {
+      card.classList.add("fade-in");
+      observer.observe(card);
+    });
+  });
+</script>
+
+<script>
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function addToCart(product) {
+  cart.push(product);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  showCart(false);
+  bounceCartIcon();
+}
+
+function removeFromCart(index) {
+  const itemsContainer = document.getElementById('cart-items');
+  const itemDiv = itemsContainer.children[index];
+
+  if (itemDiv) {
+    itemDiv.classList.add('removing');
+    setTimeout(() => {
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      showCart(false);
+    }, 400);
+  }
+}
+
+function showCart(silent = false) {
+  const popup = document.getElementById('cart-popup');
+  const itemsContainer = document.getElementById('cart-items');
+  itemsContainer.innerHTML = '';
+
+  cart.forEach((item, index) => {
+    const div = document.createElement('div');
+    div.className = 'cart-item added';
+    div.innerHTML = `
+      <img src="${item.img}" alt="${item.title}" />
+      <div class="info">
+        <p><strong>${item.title}</strong></p>
+        <p>€${item.price.toFixed(2)}</p>
+      </div>
+      <button class="remove-btn" onclick="removeFromCart(${index})">&times;</button>
+    `;
+    itemsContainer.appendChild(div);
+  });
+
+  if (!silent) {
+    popup.classList.remove('hide', 'hidden');
+    popup.classList.add('show');
+
+    clearTimeout(window.hideCartTimeout);
+    window.hideCartTimeout = setTimeout(() => {
+      popup.classList.remove('show');
+      popup.classList.add('hide');
+    }, 3500);
+  }
+}
+
+function toggleCart() {
+  const popup = document.getElementById('cart-popup');
+  if (popup.classList.contains('hidden') || popup.classList.contains('hide')) {
+    popup.classList.remove('hidden', 'hide');
+    popup.classList.add('show');
+  } else {
+    popup.classList.remove('show');
+    popup.classList.add('hidden');
+  }
+}
+
+
+function bounceCartIcon() {
+  const icon = document.getElementById('cart-icon');
+  if (icon) {
+    icon.classList.add('bounce');
+    setTimeout(() => icon.classList.remove('bounce'), 300);
+  }
+}
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.menu-card');
+
+  cards.forEach(card => {
+    const button = card.querySelector('.add-btn');
+    const title = card.querySelector('h3').textContent.trim();
+    const img = card.querySelector('img').getAttribute('src');
+    const priceText = card.querySelector('.price').textContent.trim().replace('€', '').replace(',', '.');
+    const price = parseFloat(priceText);
+
+    button.addEventListener('click', () => {
+      addToCart({ title, img, price });
+    });
+  });
+
+  showCart(true);
+});
+</script>
 </body>
 </html>

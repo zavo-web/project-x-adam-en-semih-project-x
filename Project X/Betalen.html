@@ -1,87 +1,90 @@
 <!DOCTYPE html>
 <html lang="nl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Betaling - ZavoMeals</title>
-  <link rel="icon" type="image/png" href="/Project X/img/ZavoMeals (grotere logo) (2).png">
-  <link rel="stylesheet" href="betalen.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Betaling - ZavoMeals</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/Project X/img/ZavoMeals (grotere logo) (2).png"
+    />
+    <link rel="stylesheet" href="betalen.css" />
+  </head>
+  <body>
+    <!-- ✅ NAVBAR met originele stijl -->
+    <nav class="navbar fade-in-down fade-in-delay-1">
+      <a href="index.html" class="logo">ZavoMeals</a>
+      <div class="nav-links">
+        <a href="overons.html" class="link-over">Over ons</a>
+        <a href="contact.html" class="link-contact">Contacteer ons</a>
+      </div>
+    </nav>
 
-  <!-- ✅ NAVBAR met originele stijl -->
-  <nav class="navbar fade-in-down fade-in-delay-1">
-  <a href="index.html" class="logo">ZavoMeals</a>
-  <div class="nav-links">
-    <a href="contact.html" class="link-over">Over ons</a>
-    <a href="contact.html" class="link-contact">Contacteer ons</a>
-  </div>
-</nav>
+    <!-- ✅ INHOUD -->
+    <div class="container">
+      <h1>Jouw Bestelling</h1>
 
+      <div id="cart-list"></div>
+      <div class="total" id="total-price">Totaal: €0,00</div>
 
-  <!-- ✅ INHOUD -->
-  <div class="container">
-    <h1>Jouw Bestelling</h1>
+      <div class="payment-section">
+        <h2>Betaalmethode</h2>
+        <label><input type="radio" name="payment" checked /> iDEAL</label>
+        <label><input type="radio" name="payment" /> Bancontact</label>
+        <label><input type="radio" name="payment" /> Creditcard</label>
+        <label><input type="radio" name="payment" /> PayPal</label>
+      </div>
 
-    <div id="cart-list"></div>
-    <div class="total" id="total-price">Totaal: €0,00</div>
-
-    <div class="payment-section">
-      <h2>Betaalmethode</h2>
-      <label><input type="radio" name="payment" checked> iDEAL</label>
-      <label><input type="radio" name="payment"> Bancontact</label>
-      <label><input type="radio" name="payment"> Creditcard</label>
-      <label><input type="radio" name="payment"> PayPal</label>
+      <button class="pay-button">Betaal nu</button>
     </div>
 
-    <button class="pay-button">Betaal nu</button>
-  </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cartList = document.getElementById("cart-list");
+        const totalEl = document.getElementById("total-price");
+        let total = 0;
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const cartList = document.getElementById('cart-list');
-      const totalEl = document.getElementById('total-price');
-      let total = 0;
-
-      if (cart.length === 0) {
-        cartList.innerHTML = '<p class="empty-message">Je winkelmandje is leeg.</p>';
-        totalEl.style.display = 'none';
-      } else {
-        cart.forEach(item => {
-          const itemEl = document.createElement('div');
-          itemEl.className = 'cart-item';
-          itemEl.innerHTML = `
+        if (cart.length === 0) {
+          cartList.innerHTML =
+            '<p class="empty-message">Je winkelmandje is leeg.</p>';
+          totalEl.style.display = "none";
+        } else {
+          cart.forEach((item) => {
+            const itemEl = document.createElement("div");
+            itemEl.className = "cart-item";
+            itemEl.innerHTML = `
             <img src="${item.img}" alt="${item.title}">
             <div class="cart-info">
               <h4>${item.title}</h4>
-              <p>€${item.price.toFixed(2).replace('.', ',')}</p>
+              <p>€${item.price.toFixed(2).replace(".", ",")}</p>
             </div>
           `;
-          cartList.appendChild(itemEl);
-          total += item.price;
-        });
+            cartList.appendChild(itemEl);
+            total += item.price;
+          });
 
-        totalEl.textContent = 'Totaal: €' + total.toFixed(2).replace('.', ',');
-      }
-
-      document.querySelector('.pay-button').addEventListener('click', () => {
-        if (cart.length === 0) {
-          alert("Je winkelmandje is leeg.");
-          return;
+          totalEl.textContent =
+            "Totaal: €" + total.toFixed(2).replace(".", ",");
         }
 
-        alert('Bedankt voor je bestelling!');
-        localStorage.removeItem('cart');
-        window.location.href = 'index.html';
+        document.querySelector(".pay-button").addEventListener("click", () => {
+          if (cart.length === 0) {
+            alert("Je winkelmandje is leeg.");
+            return;
+          }
+
+          alert("Bedankt voor je bestelling!");
+          localStorage.removeItem("cart");
+          window.location.href = "index.html";
+        });
       });
-    });
 
-    window.addEventListener('scroll', function () {
-      const navbar = document.querySelector('.navbar');
-      navbar.classList.toggle('scrolled', window.scrollY > 10);
-    });
-  </script>
-
-</body>
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        navbar.classList.toggle("scrolled", window.scrollY > 10);
+      });
+    </script>
+  </body>
 </html>

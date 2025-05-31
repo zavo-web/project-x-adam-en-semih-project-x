@@ -1,5 +1,248 @@
+/* Algemene instellingen */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-image: url('https://img.freepik.com/free-photo/top-view-arrangement-with-food-wooden-background_23-2148308806.jpg?semt=ais_hybrid&w=740');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 140vh;
+    position: relative;
+    color: black;
+}
 
-/* Footer */
+
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* optioneel: kleine schaduw */
+}
+.nav-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #666;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+/* Searchbar animatie */
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 32px;
+}
+
+.search-wrapper:hover .search-input {
+  width: 160px;
+  opacity: 1;
+}
+
+.search-input {
+  width: 0;
+  opacity: 0;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  transition: width 0.3s ease, opacity 0.3s ease;
+  position: absolute;
+  right: 35px;
+  background: white;
+  z-index: 10;
+}
+
+.search-icon img,
+.cart-icon img {
+  width: 24px;       /* pas aan zoals je wil: bv. 32px of 40px */
+  height: 24px;      /* zorgt dat het niet uitrekt */
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Winkelmand animatie */
+.cart-icon {
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cart-icon:hover {
+  transform: scale(1.2);
+}
+
+
+.logo {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.nav-buttons button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.login-btn {
+    background: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.register-btn {
+    background: black;
+    color: white;
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 100px 50px;
+}
+
+.content h1 {
+    font-size: 38px;
+    max-width: 600px;
+    margin-bottom: 30px;
+    background-color: rgba(0, 0, 0, 0.849);
+    color: white;
+    display: inline-block;
+    padding: 8px 16px;
+  border-radius: 8px;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-down {
+  opacity: 0;
+  animation: fadeInDown 1s ease-out forwards;
+}
+
+.fade-in-delay-1 { animation-delay: 0.2s; }
+.fade-in-delay-2 { animation-delay: 0.4s; }
+.fade-in-delay-3 { animation-delay: 0.6s; }
+.fade-in-delay-4 { animation-delay: 0.8s; }
+.fade-in-delay-5 { animation-delay: 1s; }
+.fade-in-delay-6 { animation-delay: 1.2s; }
+.fade-in-delay-7 { animation-delay: 1.4s; }
+
+
+
+.navbar.scrolled {
+  background-color: rgba(240, 240, 240, 0.3); /* lichtgrijs en semi-transparant */
+  backdrop-filter: blur(6px); /* optioneel: maakt het netter */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* optioneel: subtiele schaduw */
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+
+@keyframes selectBounce {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.05); }
+  60%  { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+select.animate {
+  animation: selectBounce 0.3s ease;
+}
+
+
+
+/* Search bar */
+.search-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.link-over {
+  position: absolute;
+  left: 700px;
+  top: 30px;
+}
+
+.link-contact {
+  position: absolute;
+  right: 340px;
+  top: 30px;
+}
+
+
+.search-container input,
+.search-container select {
+    padding: 15px;
+    border: none;
+    font-size: 16px;
+    flex: 1;
+    min-width: 0;
+}
+
+.search-container button {
+    background-color: black;
+    color: white;
+    padding: 16px 30px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Login link */
+.login-links {
+    font-size: 14px;
+    margin-right: 1050px;
+  text-align: center;
+}
+
+.login-links a {
+    text-decoration: underline;
+    color: black;
+}
+
+.login-links a {
+    text-decoration: underline;
+    color: black;
+    font-weight: bold;
+  }  
+
 
 footer {
     background-color: #1b1b1b;
@@ -8,7 +251,8 @@ footer {
     text-align: center;
     margin-top: 40px;
     position: relative;
-    height: 300px;
+    height: 350px;
+    margin-bottom: px;
 }
 
 footer .footer-item {
@@ -68,3 +312,57 @@ footer .footer-item img {
     left: 50%;
     transform: translateX(-50%);
   }
+.contact-wrapper {
+      background-color: #1e1e1e;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 40px;
+      border-left: 8px solid #FFD100; /* Gele lijn */
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 209, 0, 0.2);
+    }
+
+    .contact-wrapper h1 {
+      color: #FFD100;
+      margin-bottom: 10px;
+    }
+
+    .contact-wrapper p, a {
+      color: #ccc;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .contact-wrapper strong {
+      color: white;
+    }
+
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icons img {
+      margin-right: 12px;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.1);
+    }
+
+    .explain {
+      margin-top: 60px;
+      background-color: #222;
+      padding: 20px;
+      border-radius: 8px;
+      color: #aaa;
+    }
+
+    .explain h2 {
+      color: #FFD100;
+    }
+
+    .explain li {
+      margin-bottom: 10px;
+    }

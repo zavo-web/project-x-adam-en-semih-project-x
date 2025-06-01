@@ -366,3 +366,93 @@ footer .footer-item img {
     .explain li {
       margin-bottom: 10px;
     }
+
+    @media screen and (max-width: 767px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .link-over, .link-contact {
+    position: static;
+    margin: 5px 0;
+  }
+
+  .contact-wrapper, .explain {
+    margin: 20px 10px;
+    padding: 20px;
+  }
+
+  .contact-wrapper h1, .explain h2 {
+    font-size: 22px;
+  }
+
+  footer {
+    height: auto;
+    padding: 20px 10px;
+    text-align: left;
+  }
+
+  .boven-links,
+  .boven-rechts,
+  .midden-onder {
+    position: static;
+    transform: none;
+    padding: 10px 0;
+  }
+
+  .social-icons img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .footer-item img {
+    width: 120px;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+
+  .link-over {
+    left: 60%;
+  }
+
+  .link-contact {
+    right: 15%;
+  }
+
+  .contact-wrapper, .explain {
+    margin: 30px 20px;
+    padding: 30px;
+  }
+
+  .footer-item img {
+    width: 150px;
+  }
+
+  .boven-links,
+  .boven-rechts {
+    position: static;
+    padding: 10px 0;
+  }
+
+  .midden-onder {
+    position: static;
+    transform: none;
+    text-align: center;
+    margin-top: 20px;
+  }
+}

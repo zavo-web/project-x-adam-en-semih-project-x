@@ -17,6 +17,7 @@ body {
     display: flex;
     align-items: center;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
 .logo-container {
@@ -60,10 +61,9 @@ body {
     color: white;
     font-weight: bold;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    padding: 15px 20px;         /* voeg toe */
-    border-radius: 20px;        /* voeg toe */
+    padding: 15px 20px;
+    border-radius: 20px;
 }
-
 
 .menu-icon {
     width: 40px;
@@ -77,7 +77,6 @@ body {
     gap: 20px;
     padding: 20px;
 }
-
 
 .menu-card {
     background: #f44336;
@@ -95,11 +94,11 @@ body {
 }
 
 .menu-img {
-  width: 100%; 
-  height: 150px;         
-  object-fit: cover;
-  display: block;
-  border-radius: 12px;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
 }
 
 .price {
@@ -210,94 +209,61 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Popup animatie */
 @keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideOut {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
 }
 
-/* Bij het toevoegen van item */
 @keyframes itemAdded {
-  0% {
-    transform: scale(0.9);
-    opacity: 0.3;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+    0% { transform: scale(0.9); opacity: 0.3; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
-/* Bij het verwijderen */
 @keyframes itemRemoved {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    height: 0;
-    margin: 0;
-    padding: 0;
-  }
+    0% { opacity: 1; }
+    100% { opacity: 0; height: 0; margin: 0; padding: 0; }
 }
 
-/* Toegepast op de popup */
 #cart-popup.show {
-  animation: slideIn 0.4s ease forwards;
+    animation: slideIn 0.4s ease forwards;
 }
 
 #cart-popup.hide {
-  animation: slideOut 0.4s ease forwards;
+    animation: slideOut 0.4s ease forwards;
 }
 
-/* Nieuw toegevoegde items */
 .cart-item.added {
-  animation: itemAdded 0.3s ease;
+    animation: itemAdded 0.3s ease;
 }
 
-/* Te verwijderen items */
 .cart-item.removing {
-  animation: itemRemoved 0.4s ease forwards;
+    animation: itemRemoved 0.4s ease forwards;
 }
 
 .floating-checkout-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #28a745;
-  color: white;
-  padding: 14px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  z-index: 1000;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 1000;
 }
 
 .floating-checkout-btn:hover {
-  background-color: #218838;
-  transform: scale(1.05);
+    background-color: #218838;
+    transform: scale(1.05);
 }
-
-
 
 footer {
     background-color: #1b1b1b;
@@ -348,132 +314,122 @@ footer .footer-item img {
     margin: 40px 0 20px;
 }
 
-.boven-links {
+.boven-links,
+.boven-rechts,
+.midden-onder {
     position: absolute;
+    padding: 10px;
+}
+
+.boven-links {
     top: 0;
     left: 0;
-    padding: 10px;
 }
 
 .boven-rechts {
-    position: absolute;
     top: 0;
     right: 0;
-    padding: 10px;
 }
 
 .midden-onder {
-    position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
 }
 
+/* === MEDIA QUERIES === */
+
 @media (max-width: 600px) {
-  /* Compact the header */
-  .menu-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 10px;
-  }
+    .menu-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px;
+    }
 
-  .logo-container {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
+    .logo-container {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
 
-  .menu-nav {
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: flex-start;
-  }
+    .menu-nav {
+        gap: 10px;
+    }
 
-  .menu-button {
-    font-size: 12px;
-    padding: 6px 8px;
-    gap: 5px;
-  }
+    .menu-button {
+        font-size: 12px;
+        padding: 6px 8px;
+        gap: 5px;
+    }
 
-  .menu-icon {
-    width: 26px;
-    height: 26px;
-  }
+    .menu-icon {
+        width: 26px;
+        height: 26px;
+    }
 
-  /* Footer layout */
-  footer {
-    height: auto;
-    text-align: left;
-    padding: 20px 10px;
-  }
+    footer {
+        height: auto;
+        text-align: left;
+        padding: 20px 10px;
+    }
 
-  footer .footer-item {
-    margin-bottom: 20px;
-  }
+    footer .footer-item img {
+        max-width: 100%;
+    }
 
-  footer .footer-item img {
-    max-width: 120px;
-  }
+    .boven-links,
+    .boven-rechts,
+    .midden-onder {
+        position: static;
+        transform: none;
+        text-align: center;
+        margin-top: 10px;
+    }
 
-  footer .footer-item:nth-child(2) img {
-    margin: 10px 0;
-  }
-
-  .boven-links,
-  .boven-rechts,
-  .midden-onder {
-    position: static;
-    transform: none;
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  .copyright {
-    text-align: center;
-    margin-top: 20px;
-  }
+    .copyright {
+        text-align: center;
+    }
 }
+
 @media (min-width: 601px) and (max-width: 1024px) {
-  /* Menu Header compacter */
-  .menu-header {
-    flex-direction: row;
-    align-items: center;
-    gap: 20px; /* kleiner dan desktop */
-    padding: 10px 15px; /* minder padding */
-  }
+    .menu-header {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        padding: 10px 15px;
+    }
 
-  .logo-container {
-    font-size: 20px;
-  }
+    .logo-container {
+        font-size: 20px;
+    }
 
-  .menu-nav {
-    gap: 20px; /* kleiner dan desktop */
-    justify-content: flex-start;
-  }
+    .menu-nav {
+        gap: 20px;
+    }
 
-  .menu-button {
-    font-size: 14px;
-    padding: 8px 12px;
-    gap: 6px;
-  }
+    .menu-button {
+        font-size: 14px;
+        padding: 8px 12px;
+        gap: 6px;
+    }
 
-  .menu-icon {
-    width: 30px;
-    height: 30px;
-  }
+    .menu-icon {
+        width: 30px;
+        height: 30px;
+    }
 
-  /* Footer compacter */
-  footer {
-    padding: 20px 15px;
-    text-align: center;
-  }
+    footer {
+        padding: 20px 15px;
+        text-align: center;
+        height: auto;
+    }
 
-  .boven-links,
-  .boven-rechts,
-  .midden-onder {
-    position: static;
-    transform: none;
-    text-align: center;
-    margin-top: 10px;
-  }
+    .boven-links,
+    .boven-rechts,
+    .midden-onder {
+        position: static;
+        transform: none;
+        text-align: center;
+        margin-top: 10px;
+    }
 }

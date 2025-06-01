@@ -1,274 +1,210 @@
 /* Algemene instellingen */
-main {
-    margin: 0;
-    margin-top: 0%;
-    margin-bottom: 0%;
-    background-image: url('https://img.freepik.com/free-photo/top-view-arrangement-with-food-wooden-background_23-2148308806.jpg?semt=ais_hybrid&w=740');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    position: relative;
-    color: black;
+* {
+  box-sizing: border-box;
 }
+
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+main {
+  background-image: url('https://img.freepik.com/free-photo/top-view-arrangement-with-food-wooden-background_23-2148308806.jpg?semt=ais_hybrid&w=740');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
-
-.content h1 {   
-    text-align: center;
-    margin: 0 auto;
-    margin-bottom: 20px;
-  }
 
 /* Navbar */
 .navbar {
-    position: relative;
-    z-index: 2;
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: white;
+  flex-wrap: wrap;
 }
 
 .logo {
-    font-weight: bold;
-    font-size: 22px;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
 }
 
 .nav-buttons button {
-    margin-left: 10px;
-    padding: 8px 16px;
-    font-size: 14px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 .login-btn {
-    background: white;
-    color: black;
-    border: 1px solid black;
+  background: white;
+  color: black;
+  border: 1px solid black;
 }
 
 .register-btn {
-    background: black;
-    color: white;
+  background: black;
+  color: white;
 }
 
-/* Content */
+/* Login Box */
 .login-box {
-    background-color: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center;
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
 }
 
+.login-box h1,
 .login-box h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: bold;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .login-box input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 .login-box button {
-    width: 100%;
-    padding: 12px;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+  width: 100%;
+  padding: 12px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .login-box button:hover {
-    background-color: #333;
+  background-color: #333;
 }
 
-.login-links {
-    font-size: 14px;
-    margin-top: 15px;
-}
-
-.login-links a {
-    text-decoration: underline;
-    color: black;
-}
-
-.login-links a:hover {
-    color: #555;
-}
-
-/* Search bar */
-.search-container {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 600px;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-}
-
-.search-container input,
-.search-container select {
-    padding: 15px;
-    border: none;
-    font-size: 16px;
-    flex: 1;
-    min-width: 0;
-}
-
-.search-container button {
-    background-color: black;
-    color: white;
-    padding: 15px 25px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-/* Login link */
-.login-links {
-    font-size: 14px;
-}
-
-.login-links a {
-    text-decoration: underline;
-    color: black;
-}
-
-
+/* Footer */
 footer {
-    background-color: #1b1b1b;
-    color: #fff;
-    padding: 30px 20px;
-    text-align: center;
-    margin-top: 0px;
-    position: relative;
-    height: 350px;
-}
-
-footer .footer-item {
-    margin-bottom: 20px;
+  background-color: #1b1b1b;
+  color: #fff;
+  padding: 30px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
 }
 
 footer h1 {
-    font-size: 18px;
-    margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 footer p,
 footer a {
-    font-size: 14px;
-    color: #ddd;
-    text-decoration: none;
+  font-size: 14px;
+  color: #ddd;
+  text-decoration: none;
 }
 
 footer a:hover {
-    color: #fff;
+  color: #fff;
 }
 
-footer .footer-item img {
-    margin: 10px auto;
-    display: block;
-    border-radius: 10px;
+footer img {
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
+.footer-item,
+.boven-links,
+.boven-rechts {
+  max-width: 300px;
+  margin: 15px auto;
 }
 
 .copyright {
-    margin-top: 20px;
-    font-size: 12px;
-    color: #aaa;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #aaa;
+  text-align: center;
 }
 
-.recommended-products-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    margin: 40px 0 20px;
-}
-.boven-links {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px;
-  }
-  
-  .boven-rechts {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px;
-  }
-  .midden-onder {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  /* Mobiel (gsm) */
-@media (min-width: 601px) and (max-width: 1024px) {
-  /* Menu Header compacter */
-  .menu-header {
-    flex-direction: row;
-    align-items: center;
-    gap: 20px; /* kleiner dan desktop */
-    padding: 10px 15px; /* minder padding */
+/* Responsive: Tablet */
+@media (max-width: 1024px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
   }
 
-  .logo-container {
-    font-size: 20px;
-  }
-
-  .menu-nav {
-    gap: 20px; /* kleiner dan desktop */
+  .nav-buttons {
+    width: 100%;
     justify-content: flex-start;
-  }
-
-  .menu-button {
-    font-size: 14px;
-    padding: 8px 12px;
-    gap: 6px;
-  }
-
-  .menu-icon {
-    width: 30px;
-    height: 30px;
-  }
-
-  /* Footer compacter */
-  footer {
-    padding: 20px 15px;
-    text-align: center;
-  }
-
-  .boven-links,
-  .boven-rechts,
-  .midden-onder {
-    position: static;
-    transform: none;
-    text-align: center;
     margin-top: 10px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-item,
+  .boven-links,
+  .boven-rechts {
+    max-width: 90%;
+    margin: 10px 0;
+  }
+}
+
+/* Responsive: Mobiel */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .nav-buttons button {
+    width: 80%;
+  }
+
+  .login-box {
+    padding: 25px 15px;
+  }
+
+  footer {
+    padding: 20px 10px;
+  }
+
+  .footer-item img {
+    width: 150px;
+    height: auto;
   }
 }

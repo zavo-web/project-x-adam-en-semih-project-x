@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drinks Menu ⏐ ZavoMeals</title>
+  <link rel="stylesheet" href="Menu_drinks.css">
+  <link rel="icon" type="image/png" href="./Project X/img/ZavoMeals (grotere logo) (2).png">
+</head>
+<body>
+
+<header class="menu-header">
+  <a href="homepage.html" class="logo-container">ZavoMeals</a>
+  <nav class="menu-nav">
+    <a href="Menu_all.html" class="menu-button"><img src="./Project X/img/nieuwe menu foto.png" alt="Alle menu categorieën" class="menu-icon"> All Menu</a>
+    <a href="Menu_pizza.html" class="menu-button"><img src="./Project X/img/logo_pizza.png" alt="Pizza categorie" class="menu-icon"> Pizza</a>
+    <a href="Menu_burger.html" class="menu-button"><img src="./Project X/img/Logo_burger.png" alt="Burger categorie" class="menu-icon"> Burger</a>
+    <a href="Menu_combo.html" class="menu-button"><img src="./Project X/img/Logo_combo.png" alt="Combo deals" class="menu-icon"> Combo</a>
+    <a href="Menu_drinks.html" class="menu-button active"><img src="./Project X/img/Logo_drinks.png" alt="Drankjes" class="menu-icon"> Drinks</a>
+    <a href="Menu_sandwich.html" class="menu-button"><img src="./Project X/img/logo_sandwich.png" alt="Sandwich categorie" class="menu-icon"> Sandwich</a>
+    <a href="Menu_salad.html" class="menu-button"><img src="./Project X/img/nieuwe salad photo.png" alt="Salades" class="menu-icon"> Salad</a>
+  </nav>
+
+  <div class="cart-icon-container boven-rechts">
+    <img src="./Project X/img/winkelmand.png" class="cart-icon" onclick="toggleCart()" />
+  </div>
+
+  <div id="cart-popup" class="cart-popup hidden">
+    <h3>Winkelmand</h3>
+    <div id="cart-items"></div>
+  </div>
+</header>
+
+
+<main class="menu-grid">
+  <div class="menu-card">
+    <img src="./Project X/img/cola.jpeg" alt="Cola" class="menu-img">
+    <h3>Cola</h3>
+    <p>Verfrissend en bruisend</p>
+    <p class="price">€2,00</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="./Project X/img/fanta.jpeg" alt="Fanta" class="menu-img">
+    <h3>Fanta</h3>
+    <p>Fruitige sinaasappelsmaak</p>
+    <p class="price">€2,00</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="./Project X/img/sprite.jpeg" alt="Sprite" class="menu-img">
+    <h3>Sprite</h3>
+    <p>Citroen-limoen frisdrank</p>
+    <p class="price">€2,00</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="./Project X/img/icetea.jpeg" alt="Ice Tea" class="menu-img">
+    <h3>Ice Tea</h3>
+    <p>Zachte ijsthee met perziksmaak</p>
+    <p class="price">€2,20</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+    <img src="./Project X/img/spa_water.jpeg" alt="Water" class="menu-img">
+    <h3>Water</h3>
+    <p>Natuurlijk mineraalwater</p>
+    <p class="price">€1,50</p>
+    <button class="add-btn" type="button">+</button>
+  </div>
+
+  <div class="menu-card">
+  <img src="./Project X/img/redbull.jpeg" alt="Red Bull" class="menu-img">
+  <h3>Red Bull</h3>
+  <p>Energy drink voor een boost</p>
+  <p class="price">€2,50</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/fruitmixsmoothie.jpeg" alt="Fruitmix" class="menu-img">
+  <h3>Fruitmix Smoothie</h3>
+  <p>Aardbei, banaan, mango mix</p>
+  <p class="price">€3,00</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/chocomelk.jpeg" alt="Chocomelk" class="menu-img">
+  <h3>Cecemel</h3>
+  <p>Rijke chocolademelk, gekoeld</p>
+  <p class="price">€2,20</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/coffee.jpeg" alt="Koffie" class="menu-img">
+  <h3>Koffie</h3>
+  <p>Versgezette zwarte koffie</p>
+  <p class="price">€1,80</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/milskhake aarbeei.jpeg" alt="Milkshake Aardbei" class="menu-img">
+  <h3>Milkshake Aardbei</h3>
+  <p>Romige aardbeienshake</p>
+  <p class="price">€2,90</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+</main>
+
+
+
+<a href="Betalen.html" class="floating-checkout-btn">Verder gaan met betalen</a>
+
+<footer>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-item center">
+      <img src="./Project X/img/ZavoMeals.png" alt="ZavoMeals logo" width="175">
+    </div>
+    <div class="boven-links">
+      <h1 id="Over_ons">Over ons</h1>
+      <p><strong>Meer weten over ons? Klik hieronder:</strong></p>
+      <nav>
+        <a href="./contact.html">Wie zijn wij?</a><br>
+        <a href="./contact.html">Onze missie</a><br>
+        <a href="./contact.html">Waarom kiezen voor ons?</a><br>
+        <a href="./contact.html">Onze visie</a><br>
+        <a href="./contact.html">Contact opnemen</a><br>
+        <a href="./contact.html">Over copyright</a>
+      </nav>
+    </div>
+    <div class="boven-rechts">
+      <h1 id="Contact">Vragen?</h1>
+      <p>Mail of bel ons!</p>
+      <p><strong>Email:</strong><br><a href="mailto:ZavoMeals@gmail.com">ZavoMeals@gmail.com</a></p>
+      <p><strong>Telefoon:</strong><br><a href="tel:+328392927">+32 839 29 27</a></p>
+      <p><strong>Adres:</strong><br>Stationsstraat 50, 1930 Zaventem, België</p>
+      <h3>Volg ons</h3>
+      <a href="https://www.instagram.com/" target="_blank"><img src="./Project X/img/Insta2.png" alt="Instagram logo" width="45"></a>
+      <a href="https://www.facebook.com/" target="_blank"><img src="./Project X/img/facebook.png" alt="Facebook logo" width="45"></a>
+    </div>
+    <div class="copyright midden-onder">
+      <p>&copy; 2025 ZavoMeals. Alle rechten voorbehouden.</p>
+    </div>
+  </footer>
+</footer>
+
+<!-- javascript -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".menu-card");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    cards.forEach(card => {
+      card.classList.add("fade-in");
+      observer.observe(card);
+    });
+  });
+</script>
+
+<script>
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function addToCart(product) {
+  cart.push(product);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  showCart(false);
+  bounceCartIcon();
+}
+
+function removeFromCart(index) {
+  const itemsContainer = document.getElementById('cart-items');
+  const itemDiv = itemsContainer.children[index];
+
+  if (itemDiv) {
+    itemDiv.classList.add('removing');
+    setTimeout(() => {
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      showCart(false);
+    }, 400);
+  }
+}
+
+function showCart(silent = false) {
+  const popup = document.getElementById('cart-popup');
+  const itemsContainer = document.getElementById('cart-items');
+  itemsContainer.innerHTML = '';
+
+  cart.forEach((item, index) => {
+    const div = document.createElement('div');
+    div.className = 'cart-item added';
+    div.innerHTML = `
+      <img src="${item.img}" alt="${item.title}" />
+      <div class="info">
+        <p><strong>${item.title}</strong></p>
+        <p>€${item.price.toFixed(2)}</p>
+      </div>
+      <button class="remove-btn" onclick="removeFromCart(${index})">&times;</button>
+    `;
+    itemsContainer.appendChild(div);
+  });
+
+  if (!silent) {
+    popup.classList.remove('hide', 'hidden');
+    popup.classList.add('show');
+
+    clearTimeout(window.hideCartTimeout);
+    window.hideCartTimeout = setTimeout(() => {
+      popup.classList.remove('show');
+      popup.classList.add('hide');
+    }, 3500);
+  }
+}
+
+function toggleCart() {
+  const popup = document.getElementById('cart-popup');
+  if (popup.classList.contains('hidden') || popup.classList.contains('hide')) {
+    popup.classList.remove('hidden', 'hide');
+    popup.classList.add('show');
+  } else {
+    popup.classList.remove('show');
+    popup.classList.add('hidden');
+  }
+}
+
+
+function bounceCartIcon() {
+  const icon = document.getElementById('cart-icon');
+  if (icon) {
+    icon.classList.add('bounce');
+    setTimeout(() => icon.classList.remove('bounce'), 300);
+  }
+}
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.menu-card');
+
+  cards.forEach(card => {
+    const button = card.querySelector('.add-btn');
+    const title = card.querySelector('h3').textContent.trim();
+    const img = card.querySelector('img').getAttribute('src');
+    const priceText = card.querySelector('.price').textContent.trim().replace('€', '').replace(',', '.');
+    const price = parseFloat(priceText);
+
+    button.addEventListener('click', () => {
+      addToCart({ title, img, price });
+    });
+  });
+
+  showCart(true);
+});
+</script>
+</body>
+</html>

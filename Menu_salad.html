@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salade Menu ⏐ ZavoMeals</title>
+  <link rel="stylesheet" href="Menu_salad.css">
+  <link rel="icon" type="image/png" href="./Project X/img/ZavoMeals (grotere logo) (2).png">
+</head>
+<body>
+
+<header class="menu-header">
+  <a href="homepage.html" class="logo-container">ZavoMeals</a>
+  <nav class="menu-nav">
+    <a href="Menu_all.html" class="menu-button"><img src="./Project X/img/nieuwe menu foto.png" alt="Alle menu categorieën" class="menu-icon"> All Menu</a>
+    <a href="Menu_pizza.html" class="menu-button"><img src="./Project X/img/logo_pizza.png" alt="Pizza categorie" class="menu-icon"> Pizza</a>
+    <a href="Menu_burger.html" class="menu-button"><img src="./Project X/img/Logo_burger.png" alt="Burger categorie" class="menu-icon"> Burger</a>
+    <a href="Menu_combo.html" class="menu-button"><img src="./Project X/img/Logo_combo.png" alt="Combo deals" class="menu-icon"> Combo</a>
+    <a href="Menu_drinks.html" class="menu-button"><img src="./Project X/img/Logo_drinks.png" alt="Drankjes" class="menu-icon"> Drinks</a>
+    <a href="Menu_sandwich.html" class="menu-button"><img src="./Project X/img/logo_sandwich.png" alt="Sandwich categorie" class="menu-icon"> Sandwich</a>
+    <a href="Menu_salad.html" class="menu-button active"><img src="./Project X/img/nieuwe salad photo.png" alt="Salades" class="menu-icon"> Salad</a>
+  </nav>
+
+  <div class="cart-icon-container boven-rechts">
+    <img src="./Project X/img/winkelmand.png" class="cart-icon" onclick="toggleCart()" />
+  </div>
+
+  <div id="cart-popup" class="cart-popup hidden">
+    <h3>Winkelmand</h3>
+    <div id="cart-items"></div>
+  </div>
+</header>
+
+<!-- Menu Grid -->
+<main class="menu-grid">
+  <div class="menu-card">
+  <img src="./Project X/img/cesar_sla.jpeg" alt="Caesar salade" class="menu-img">
+  <h3>Caesar Salade</h3>
+  <p>Romeinse sla, gegrilde kip, croutons, Parmezaan, caesardressing</p>
+  <p class="price">€6,50</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/quinoa avocado.jpeg" alt="Quinoasalade met avocado" class="menu-img">
+  <h3>Quinoa Avocado</h3>
+  <p>Quinoa, avocado, maïs, paprika, limoen-munt dressing</p>
+  <p class="price">€6,80</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/zalm sla.jpeg" alt="Zalm salade" class="menu-img">
+  <h3>Zalm Salade</h3>
+  <p>Gemengde sla, gerookte zalm, dille, ei, yoghurtdressing</p>
+  <p class="price">€7,20</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/falafel power.jpeg" alt="Falafel salade" class="menu-img">
+  <h3>Falafel Power</h3>
+  <p>Rucola, falafel, hummus, kikkererwten, tahini</p>
+  <p class="price">€6,10</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/tuna nicoase.jpeg" alt="Tonijn salade" class="menu-img">
+  <h3>Tonijn Nicoise</h3>
+  <p>Gemengde sla, tonijn, bonen, ui, mosterddressing</p>
+  <p class="price">€6,70</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/grilde groenten.jpeg" alt="Gegrilde groente salade" class="menu-img">
+  <h3>Gegrilde Groente</h3>
+  <p>Courgette, paprika, aubergine, balsamico</p>
+  <p class="price">€5,80</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/chicken mango.jpeg" alt="Kip mango salade" class="menu-img">
+  <h3>Kip Mango</h3>
+  <p>Kip, avocado, tomaat, limoen-dressing</p>
+  <p class="price">€7,00</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/caprese salad.jpeg" alt="Caprese salade" class="menu-img">
+  <h3>Mozzarella Tomaat</h3>
+  <p>Tomaat, mozzarella, basilicum, olijfolie</p>
+  <p class="price">€5,50</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/tabbouleh.jpeg" alt="Tabbouleh salade" class="menu-img">
+  <h3>Tabouleh</h3>
+  <p>Bulgur, tomaat, peterselie, citroen</p>
+  <p class="price">€5,90</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/temph thai.jpeg" alt="Thaise tempeh salade" class="menu-img">
+  <h3>Tempeh Thai</h3>
+  <p>Linzen, wortel, rode biet, appel</p>
+  <p class="price">€5,70</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/pesto pasta.jpeg" alt="Pasta pesto salade" class="menu-img">
+  <h3>Pasta Pesto</h3>
+  <p>Pasta, pesto, cherrytomaat, rucola</p>
+  <p class="price">€6,20</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/avocado eiersla.jpeg" alt="Avocado ei salade" class="menu-img">
+  <h3>Avocado Eiersalade</h3>
+  <p>Mozzarella, spinazie, tomaat, pijnboompitten</p>
+  <p class="price">€6,30</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/beet goat cheese salad.jpeg" alt="Bieten geitenkaas salade" class="menu-img">
+  <h3>Bieten Geitenkaas</h3>
+  <p>Bloemkool, granaatappel, koriander, yoghurt</p>
+  <p class="price">€6,40</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/griekse sla.jpeg" alt="Griekse salade" class="menu-img">
+  <h3>Griekse Salade</h3>
+  <p>Komkommer, tomaat, rode ui, olijven, feta</p>
+  <p class="price">€5,90</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/asian shrimp salad.jpeg" alt="Aziatische garnalen salade" class="menu-img">
+  <h3>Garnalen Aziatisch</h3>
+  <p>Rode kool, wortel, sesam, sojadressing</p>
+  <p class="price">€6,30</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/waldorf salad.jpeg" alt="Waldorf salade" class="menu-img">
+  <h3>Waldorf</h3>
+  <p>Aardbei, blauwe bes, kiwi, munt</p>
+  <p class="price">€5,30</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/mexian rise bean salad.jpeg" alt="Rijst en bonen salade" class="menu-img">
+  <h3>Rijstbonen Mexicaans</h3>
+  <p>Mais, bonen, tomaat, koriander, limoendressing</p>
+  <p class="price">€6,90</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/boerenkool boost.jpeg" alt="Boerenkool salade" class="menu-img">
+  <h3>Boerenkool Boost</h3>
+  <p>Boerenkool, appel, walnoten, cranberries, honing-mosterd dressing</p>
+  <p class="price">€6,60</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/tofu sesame salad.jpeg" alt="Tofu salade" class="menu-img">
+  <h3>Tofu Crunch</h3>
+  <p>Gemengde sla, gemarineerde tofu, wortel, sesam, pindadressing</p>
+  <p class="price">€6,50</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+
+<div class="menu-card">
+  <img src="./Project X/img/chicken wrap salad.jpeg" alt="Kip Caesar wrap salade" class="menu-img">
+  <h3>Kip Caesar Wrap</h3>
+  <p>Kikkererwten, spinazie, komijn, citroen</p>
+  <p class="price">€5,60</p>
+  <button class="add-btn" type="button">+</button>
+</div>
+</main>
+
+
+<a href="Betalen.html" class="floating-checkout-btn">Verder gaan met betalen</a>
+
+<footer>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-item center">
+      <img src="./Project X/img/ZavoMeals.png" alt="ZavoMeals logo" width="175">
+    </div>
+    <div class="boven-links">
+      <h1 id="Over_ons">Over ons</h1>
+      <p><strong>Meer weten over ons? Klik hieronder:</strong></p>
+      <nav>
+        <a href="./contact.html">Wie zijn wij?</a><br>
+        <a href="./contact.html">Onze missie</a><br>
+        <a href="./contact.html">Waarom kiezen voor ons?</a><br>
+        <a href="./contact.html">Onze visie</a><br>
+        <a href="./contact.html">Contact opnemen</a><br>
+        <a href="./contact.html">Over copyright</a>
+      </nav>
+    </div>
+    <div class="boven-rechts">
+      <h1 id="Contact">Vragen?</h1>
+      <p>Mail of bel ons!</p>
+      <p><strong>Email:</strong><br><a href="mailto:ZavoMeals@gmail.com">ZavoMeals@gmail.com</a></p>
+      <p><strong>Telefoon:</strong><br><a href="tel:+328392927">+32 839 29 27</a></p>
+      <p><strong>Adres:</strong><br>Stationsstraat 50, 1930 Zaventem, België</p>
+      <h3>Volg ons</h3>
+      <a href="https://www.instagram.com/" target="_blank"><img src="./Project X/img/Insta2.png" alt="Instagram logo" width="45"></a>
+      <a href="https://www.facebook.com/" target="_blank"><img src="./Project X/img/facebook.png" alt="Facebook logo" width="45"></a>
+    </div>
+    <div class="copyright midden-onder">
+      <p>&copy; 2025 ZavoMeals. Alle rechten voorbehouden.</p>
+    </div>
+  </footer>
+</footer>
+
+<!-- javascript -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".menu-card");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    cards.forEach(card => {
+      card.classList.add("fade-in");
+      observer.observe(card);
+    });
+  });
+</script>
+
+<script>
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function addToCart(product) {
+  cart.push(product);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  showCart(false);
+  bounceCartIcon();
+}
+
+function removeFromCart(index) {
+  const itemsContainer = document.getElementById('cart-items');
+  const itemDiv = itemsContainer.children[index];
+
+  if (itemDiv) {
+    itemDiv.classList.add('removing');
+    setTimeout(() => {
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      showCart(false);
+    }, 400);
+  }
+}
+
+function showCart(silent = false) {
+  const popup = document.getElementById('cart-popup');
+  const itemsContainer = document.getElementById('cart-items');
+  itemsContainer.innerHTML = '';
+
+  cart.forEach((item, index) => {
+    const div = document.createElement('div');
+    div.className = 'cart-item added';
+    div.innerHTML = `
+      <img src="${item.img}" alt="${item.title}" />
+      <div class="info">
+        <p><strong>${item.title}</strong></p>
+        <p>€${item.price.toFixed(2)}</p>
+      </div>
+      <button class="remove-btn" onclick="removeFromCart(${index})">&times;</button>
+    `;
+    itemsContainer.appendChild(div);
+  });
+
+  if (!silent) {
+    popup.classList.remove('hide', 'hidden');
+    popup.classList.add('show');
+
+    clearTimeout(window.hideCartTimeout);
+    window.hideCartTimeout = setTimeout(() => {
+      popup.classList.remove('show');
+      popup.classList.add('hide');
+    }, 3500);
+  }
+}
+
+function toggleCart() {
+  const popup = document.getElementById('cart-popup');
+  if (popup.classList.contains('hidden') || popup.classList.contains('hide')) {
+    popup.classList.remove('hidden', 'hide');
+    popup.classList.add('show');
+  } else {
+    popup.classList.remove('show');
+    popup.classList.add('hidden');
+  }
+}
+
+
+function bounceCartIcon() {
+  const icon = document.getElementById('cart-icon');
+  if (icon) {
+    icon.classList.add('bounce');
+    setTimeout(() => icon.classList.remove('bounce'), 300);
+  }
+}
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.menu-card');
+
+  cards.forEach(card => {
+    const button = card.querySelector('.add-btn');
+    const title = card.querySelector('h3').textContent.trim();
+    const img = card.querySelector('img').getAttribute('src');
+    const priceText = card.querySelector('.price').textContent.trim().replace('€', '').replace(',', '.');
+    const price = parseFloat(priceText);
+
+    button.addEventListener('click', () => {
+      addToCart({ title, img, price });
+    });
+  });
+
+  showCart(true);
+});
+</script>
+</body>
+</html>

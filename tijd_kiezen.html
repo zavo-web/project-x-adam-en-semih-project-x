@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZavoMeals ⏐ Tijd kiezen</title>
+  <link rel="stylesheet" href="tijd_kiezen.css" />
+  <link rel="icon" type="image/x-icon" href="./Project X/img/ZavoMeals (grotere logo) (2).png" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <div class="logo" onclick="window.location.href='homepage.html';">ZavoMeals</div>
+    </div>
+
+    <div class="navbar-center">
+      <a href="contact.html"><strong>Over ons</strong></a>
+      <a href="contact.html"><strong>Contacteer ons</strong></a>
+    </div>
+
+    <div class="navbar-right">
+      <div class="search-container" onmouseover="showSearch()" onmouseleave="hideSearch()">
+        <img src="./Project X/img/search.png" alt="Zoeken" class="icon" />
+        <input type="text" placeholder="Zoeken..." class="search-input" />
+      </div>
+      <img src="./Project X/img/winkelmand.png" alt="Winkelmand" class="icon" />
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="content">
+    <form class="time-form">
+      <h1>Kies een datum en tijdstip voor je bestelling</h1>
+      <label for="datum">Kies een datum:</label>
+      <input type="date" id="datum" name="datum" required />
+
+      <label for="tijd">Kies een tijd:</label>
+      <input type="time" id="tijd" name="tijd" required />
+
+      <button type="button" onclick="window.location.href='Menu_all.html';">Bevestigen</button>
+    </form>
+  </div>
+
+   <!-- Footer -->
+  <footer>
+    <div class="footer-item center">
+      <img src="./Project X/img/ZavoMeals.png" alt="ZavoMeals logo" width="175">
+    </div>
+    <div class="boven-links">
+      <h1 id="Over_ons">Over ons</h1>
+      <p><strong>Meer weten over ons? Klik hieronder:</strong></p>
+      <nav>
+        <a href="./contact.html">Wie zijn wij?</a><br>
+        <a href="./contact.html">Onze missie</a><br>
+        <a href="./contact.html">Waarom kiezen voor ons?</a><br>
+        <a href="./contact.html">Onze visie</a><br>
+        <a href="./contact.html">Contact opnemen</a><br>
+        <a href="./contact.html">Over copyright</a>
+      </nav>
+    </div>
+    <div class="boven-rechts">
+      <h1 id="Contact">Vragen?</h1>
+      <p>Mail of bel ons!</p>
+      <p><strong>Email:</strong><br><a href="mailto:ZavoMeals@gmail.com">ZavoMeals@gmail.com</a></p>
+      <p><strong>Telefoon:</strong><br><a href="tel:+328392927">+32 839 29 27</a></p>
+      <p><strong>Adres:</strong><br>Stationsstraat 50, 1930 Zaventem, België</p>
+      <h3>Volg ons</h3>
+      <a href="https://www.instagram.com/" target="_blank"><img src="./Project X/img/Insta2.png" alt="Instagram logo" width="45"></a>
+      <a href="https://www.facebook.com/" target="_blank"><img src="./Project X/img/facebook.png" alt="Facebook logo" width="45"></a>
+    </div>
+    <div class="copyright midden-onder">
+      <p>&copy; 2025 ZavoMeals. Alle rechten voorbehouden.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript voor zoekveld -->
+  <script>
+    function showSearch() {
+      document.querySelector('.search-container').classList.add('show');
+    }
+    function hideSearch() {
+      document.querySelector('.search-container').classList.remove('show');
+    }
+  </script>
+
+</body>
+</html>

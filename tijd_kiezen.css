@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background: url('/Project X/img/backgroundfoodimg.png') no-repeat center center scroll;
+  background: url('./Project X/img/backgroundfoodimg.png') no-repeat center center scroll;
   background-size: cover;
   color: #333;
 }

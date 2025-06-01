@@ -162,123 +162,72 @@ body {
 
 /* Footer */
 footer {
-  background-color: #1b1b1b;
-  color: #fff;
-  padding: 30px 20px;
-  text-align: center;
-  position: relative;
+    background-color: #1b1b1b;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 40px;
+    position: relative;
+    height: 350px;
+}
+
+footer .footer-item {
+    margin-bottom: 20px;
 }
 
 footer h1 {
-  font-size: 18px;
-  margin-bottom: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 footer p,
 footer a {
-  font-size: 14px;
-  color: #ddd;
-  text-decoration: none;
+    font-size: 14px;
+    color: #ddd;
+    text-decoration: none;
 }
 
 footer a:hover {
-  color: #fff;
+    color: #fff;
 }
 
 footer .footer-item img {
-  margin: 10px auto;
-  display: block;
-  border-radius: 10px;
+    margin: 10px auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.recommended-products-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 40px 0 20px;
 }
 
 .boven-links {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
 }
 
 .boven-rechts {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
 }
 
 .midden-onder {
-  margin-top: 30px;
-  font-size: 12px;
-  color: #aaa;
-}
-
-@media screen and (max-width: 991px) {
-  /* Navbar aanpassing */
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 20px;
-  }
-
-  .navbar-center {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 10px;
-  }
-
-  .navbar-center a {
-    margin: 8px 0;
-    font-size: 14px;
-  }
-
-  .navbar-right {
-    margin-top: 10px;
-    gap: 10px;
-  }
-
-  .search-container .search-input {
-    right: 0;
-    width: 100%;
-    max-width: 200px;
-  }
-
-  /* Content layout */
-  .content {
-    padding: 60px 10px 30px;
-  }
-
-  .content h1 {
-    font-size: 24px;
-  }
-
-  .time-form {
-    width: 90%;
-    padding: 30px 20px;
-  }
-
-  .time-form h1 {
-    font-size: 20px;
-  }
-
-  /* Footer layout */
-  .boven-links,
-  .boven-rechts {
-    position: static;
-    padding: 10px 0;
-    text-align: left;
-  }
-
-  footer {
-    text-align: left;
-    padding-bottom: 60px;
-  }
-
-  footer .footer-item.center img {
-    margin: 0 auto;
-  }
-
-  .midden-onder {
-    text-align: center;
-    margin-top: 20px;
-  }
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 

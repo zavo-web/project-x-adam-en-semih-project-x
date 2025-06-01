@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZavoMeals ⏐ Bestel, betaal en geniet!</title>
-    <link rel="stylesheet" href="index.css" />
+    <title>Login ⏐ ZavoMeals</title>
+    <link href="./Login.css" rel="stylesheet" />
     <link
       rel="icon"
       type="image/x-icon"
@@ -12,58 +12,59 @@
     />
   </head>
   <body>
-    <nav class="navbar fade-in-down fade-in-delay-1">
-      <div class="logo" onclick="window.location.href='index.html';">
-        ZavoMeals
-      </div>
-
-      <div class="nav-links">
-        <a href="overons.html" class="link-over">Over ons</a>
-        <a href="contact.html" class="link-contact">Contacteer ons</a>
-      </div>
-
-      <div class="nav-icons">
-        <div class="search-wrapper">
-          <input type="text" placeholder="Zoek hier..." class="search-input" />
-          <div class="search-icon">
-            <img src="/Project X/img/search.png" alt="Zoeken" />
-          </div>
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="logo">ZavoMeals</div>
+        <div class="nav-buttons">
+          <button class="login-btn">Login</button>
+          <button class="register-btn">Registratie</button>
         </div>
-        <div class="cart-icon">
-          <img src="/Project X/img/winkelmand.png" alt="Winkelmand" />
+      </nav>
+    </header>
+    <main>
+      <div class="content">
+        <br />
+        <div class="login-box">
+          <h1>Login om verder te gaan</h1>
+          <h2>Inloggen</h2>
+          <form id="loginForm">
+            <input
+              type="text"
+              id="username"
+              placeholder="Gebruikersnaam of School email"
+              required
+            />
+            <input
+              type="password"
+              id="password"
+              placeholder="Wachtwoord"
+              required
+            />
+            <button type="button" onclick="validateAndRedirect()">
+              Inloggen
+            </button>
+          </form>
+
+          <script>
+            function validateAndRedirect() {
+              const username = document.getElementById("username").value.trim();
+              const password = document.getElementById("password").value.trim();
+
+              if (!username || !password) {
+                alert("Vul alle velden in om door te gaan.");
+              } else {
+                window.location.href = "index.html"; // stuur door als alles is ingevuld
+              }
+            }
+          </script>
         </div>
       </div>
-    </nav>
-
-    <!-- Main Content -->
-    <div class="content fade-in-down fade-in-delay-2">
-      <h1>Kies uw campus</h1>
-
-      <div class="search-container fade-in-down fade-in-delay-3">
-        <select name="campusnaam">
-          <option value="sterrebeekstraat">Campus Sterrebeekstraat</option>
-          <option value="groenstraat">Campus Groenstraat</option>
-          <option value="hoogstraat">Campus Hoogstraat</option>
-        </select>
-
-        <select name="bezorgoptie" id="bezorgoptie">
-          <option value="nu-bezorgen">Nu bezorgen</option>
-          <option value="later-bezorgen">Later bezorgen</option>
-        </select>
-
-        <button type="submit" id="zoekknop">Zoeken</button>
-      </div>
-
-      <div class="login-links fade-in-down fade-in-delay-4">
-        Of <a href="Login.html" target="_blank">inloggen</a>
-      </div>
-    </div>
-
-    <footer class="fade-in-down fade-in-delay-5">
+    </main>
+    <footer class="footer">
       <div class="footer-item center">
         <img src="./img/ZavoMeals.png" alt="Logo" width="175" />
       </div>
-
       <div class="boven-links">
         <h1 id="Over_ons">Over ons</h1>
         <p></p>
@@ -71,27 +72,33 @@
         <p><strong>Wil je meer Weten over ons? klik hier </strong></p>
         <br />
         <nav>
-          <a href="./contact.html"> Wie zijn wij? </a><br />
-          <a href="./contact.html"> Onze missie </a><br />
-          <a href="./contact.html"> Waarom kiezen voor ons? </a><br />
-          <a href="./contact.html"> Onze visie </a><br />
-          <a href="./contact.html"> Wil je ons contacteren? </a><br />
-          <a href="./contact.html"> Over Copyright </a><br />
+          <a href="./contact.html"> Wie zijn wij? </a>
+          <br />
+          <a href="./contact.html"> Onze missie </a>
+          <br />
+          <a href="./contact.html"> Waarom kiezen voor ons? </a>
+          <br />
+          <a href="./contact.html"> Onze visie </a>
+          <br />
+          <a href="./contact.html"> Wil je ons contacteren? </a>
+          <br />
+          <a href="./contact.html"> Over Copyright </a>
+          <br />
         </nav>
       </div>
-
+      <br />
       <div class="boven-rechts">
         <h1 id="Contact">Vragen?</h1>
         <p>Mail of bel ons!</p>
         <br />
         <p>
           <strong>Email:</strong><br />
-          <a href="mailto:ZavoMeals@gmail.com">ZavoMeals@gmail.com</a>
+          <a href="ZavoMeals@gmail.com">ZavoMeals@gmail.com</a>
         </p>
         <br />
         <p>
           <strong>Telefoon:</strong><br />
-          <a href="tel:+328392927">+328392927</a>
+          <a href="+328392927">+328392927</a>
         </p>
         <br />
         <p><strong>adres:</strong> Stationsstraat 50, 1930 Zaventem, België</p>
@@ -108,43 +115,5 @@
         <p>&copy; 2025 ZavoMeals. Alle rechten voorbehouden.</p>
       </div>
     </footer>
-
-    <!-- ✅ JavaScript functionaliteit -->
-    <script>
-      document
-        .getElementById("zoekknop")
-        .addEventListener("click", function (event) {
-          event.preventDefault();
-          const optie = document.getElementById("bezorgoptie").value;
-          if (optie === "nu-bezorgen") {
-            window.location.href = "Menu_all.html";
-          } else if (optie === "later-bezorgen") {
-            window.location.href = "tijd_kiezen.html";
-          }
-        });
-    </script>
-
-    <!-- voor transparent navbar als je beneden scrollt -->
-    <script>
-      window.addEventListener("scroll", function () {
-        const navbar = document.querySelector(".navbar");
-        if (window.scrollY > 10) {
-          navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
-        }
-      });
-    </script>
-
-    <!-- Select bounce animatie -->
-    <script>
-      document.querySelectorAll("select").forEach((select) => {
-        select.addEventListener("change", () => {
-          select.classList.remove("animate");
-          void select.offsetWidth;
-          select.classList.add("animate");
-        });
-      });
-    </script>
   </body>
 </html>
